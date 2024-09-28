@@ -1,16 +1,26 @@
-# suiyin
+## Suiyin Mobile
 
-A new Flutter project.
+### 打包/运行命令
 
-## Getting Started
+如果脚本写到了`package.json`，直接运行`npm run run:ios:bate`
 
-This project is a starting point for a Flutter application.
+#### Android 打包
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+cd android && ENVFILE=.env.staging ./gradlew assembleDebug && cd ..
+ENVFILE=.env.rc ./gradlew assembleRelease
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+#### iOS 运行
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://medium.com/armenotech/configure-environment-variables-with-react-native-config-for-ios-and-android-7079c0842d8b
+
+暂时命令应该是搞定不了，只能指定`Scheme` ...
+
+```bash
+chmod +x ios-cache-cleaner.sh
+```
+
+```bash
+./ios-cache-cleaner.sh && react-native run-ios --scheme JP-Bate
+```
